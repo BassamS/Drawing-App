@@ -23,12 +23,13 @@ def draw_grid(win, grid):
                              PIXEL_SIZE, PIXEL_SIZE, PIXEL_SIZE))
 
         if DRAW_GRID_LINES:
-            for i in range(ROWS):
+            for i in range(ROWS + 1):
                 pygame.draw.line(win, BLACK, (0, i * PIXEL_SIZE),
                                  (WIDTH, i * PIXEL_SIZE))
 
-            for j in range(COLS):
-                pass
+            for i in range(COLS + 1):
+                pygame.draw.line(win, BLACK, (i * PIXEL_SIZE, 0),
+                                 (i * PIXEL_SIZE, HEIGHT - TOOLBAR_HEIGHT))
 
 
 def draw(win, grid):
