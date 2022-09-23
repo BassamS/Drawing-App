@@ -16,13 +16,21 @@ def init_grid(rows, cols, color):
     return grid
 
 
-def draw(win):
+def draw_grid(win, grid):
+    for i, row in enumerate(grid):
+        for j, pixel in enumerate(row):
+            pygame.draw.rect(win, pixel, (j * PIXEL_SIZE, i *
+                             PIXEL_SIZE, PIXEL_SIZE, PIXEL_SIZE))
+
+
+def draw(win, grid):
     win.fill(BG_COLOR)
     pygame.display.update()
 
 
 run = True
 clock = pygame.time.Clock()
+grid = init_grid(ROWS, COLS, BG_COLOR)
 
 while run:
     clock.tick(FPS)
@@ -31,6 +39,6 @@ while run:
         if event.type == pygame.QUIT:
             run = False
 
-    draw(WIN)
+    draw(WIN, grid)
 
 pygame.quit()
