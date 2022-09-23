@@ -22,9 +22,18 @@ def draw_grid(win, grid):
             pygame.draw.rect(win, pixel, (j * PIXEL_SIZE, i *
                              PIXEL_SIZE, PIXEL_SIZE, PIXEL_SIZE))
 
+        if DRAW_GRID_LINES:
+            for i in range(ROWS):
+                pygame.draw.line(win, BLACK, (0, i * PIXEL_SIZE),
+                                 (WIDTH, i * PIXEL_SIZE))
+
+            for j in range(COLS):
+                pass
+
 
 def draw(win, grid):
     win.fill(BG_COLOR)
+    draw_grid(win, grid)
     pygame.display.update()
 
 
