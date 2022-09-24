@@ -84,7 +84,11 @@ while run:
                 row, col = get_row_col_from_pos(pos)
                 grid[row][col] = drawing_color
             except IndexError:
-                pass
+                for button in buttons:
+                    if not button.clicked(pos):
+                        continue
+
+                    drawing_color = button.color
 
     draw(WIN, grid, buttons)
 
