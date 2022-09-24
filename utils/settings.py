@@ -10,8 +10,8 @@ GREEN = (0, 0, 255)
 
 FPS = 240
 
-# WIDTH, HEIGHT = 600, 700
-WIDTH, HEIGHT = 400, 500
+WIDTH, HEIGHT = 600, 700
+# WIDTH, HEIGHT = 400, 500
 
 ROWS = COLS = 100
 
@@ -25,4 +25,4 @@ DRAW_GRID_LINES = False
 
 
 def get_font(size):
-    return pygame.font.SysFont('comicsans', size)
+    return pygame.font.SysFont("Arial", size)
