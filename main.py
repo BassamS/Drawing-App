@@ -1,4 +1,5 @@
 from utils import *
+from utils import button
 
 WIN = pygame.display.set_mode((WIDTH, HEIGHT))
 # Name on the top of the window
@@ -53,6 +54,11 @@ run = True
 clock = pygame.time.Clock()
 grid = init_grid(ROWS, COLS, BG_COLOR)
 drawing_color = BLACK
+
+button_y = HEIGHT - TOOLBAR_HEIGHT/2 - 25
+buttons = [
+    button(10, button_y, 50, 50)
+]
 
 while run:
     clock.tick(FPS)

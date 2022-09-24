@@ -31,3 +31,5 @@ def clicked(self, pos):
         return False
     if not (y >= self.y and y <= self.y + self.width):
         return False
+
+    return True
