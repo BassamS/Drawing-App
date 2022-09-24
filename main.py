@@ -33,9 +33,13 @@ def draw_grid(win, grid):
                                  (i * PIXEL_SIZE, HEIGHT - TOOLBAR_HEIGHT))
 
 
-def draw(win, grid):
+def draw(win, grid, buttons):
     win.fill(BG_COLOR)
     draw_grid(win, grid)
+
+    for button in buttons:
+        button.draw(win)
+
     pygame.display.update()
 
 
@@ -57,7 +61,12 @@ drawing_color = BLACK
 
 button_y = HEIGHT - TOOLBAR_HEIGHT/2 - 25
 buttons = [
-    button(10, button_y, 50, 50)
+    Button(10, button_y, 50, 50, BLACK),
+    Button(70, button_y, 50, 50, RED),
+    Button(130, button_y, 50, 50, GREEN),
+    Button(190, button_y, 50, 50, BLUE),
+    Button(250, button_y, 50, 50, WHITE, "Erase", BLACK),
+    Button(310, button_y, 50, 50, WHITE, "Clear", BLACK)
 ]
 
 while run:
@@ -77,6 +86,6 @@ while run:
             except IndexError:
                 pass
 
-    draw(WIN, grid)
+    draw(WIN, grid, buttons)
 
 pygame.quit()
