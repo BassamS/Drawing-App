@@ -24,5 +24,10 @@ def draw(self, win):
                  2 - text_surface.get_width()/2, self.y + self.height/2 - text_surface.get_height()/2))
 
 
-def clicked(self, po):
-    pass
+def clicked(self, pos):
+    x, y = pos
+
+    if not (x >= self.x and x <= self.x + self.width):
+        return False
+    if not (y >= self.y and y <= self.y + self.width):
+        return False
